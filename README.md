@@ -1,0 +1,2 @@
+# Manifold
+addon for FreeCAD
