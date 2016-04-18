@@ -186,31 +186,28 @@ DINPORTS = {
     'DIN24342 NG63 Z2': ([0., -75., 12.]),
     }
 
-# these are the most common drillbit sizes, drillbits under 3.0 or 3.3 probably mot necessary
+# these are the most common drillbit sizes
 DRILLBITS = [
-    0.0483, 0.05, 0.0584, 0.0686, 0.0787, 0.0889, 0.0991, 0.1, 0.1092, 0.1194, 0.1295, 0.1397, 0.1499, 0.16, 0.1702, 0.1803, 0.1905,
-    0.2007, 0.2, 0.2108, 0.221, 0.2311, 0.2413, 0.25, 0.254, 0.2667, 0.2794, 0.2921, 0.3, 0.3048, 0.3175, 0.3302, 0.3429, 0.35, 0.368,
-    0.3969, 0.4, 0.4064, 0.42, 0.44, 0.45, 0.4572, 0.46, 0.48, 0.5, 0.508, 0.5334, 0.55, 0.5715, 0.6, 0.6096, 0.635, 0.65, 0.6604, 0.7,
-    0.7112, 0.7417, 0.75, 0.7874, 0.7938, 0.8, 0.8128, 0.8382, 0.85, 0.889, 0.9, 0.9144, 0.9398, 0.95, 0.9652, 0.9906, 1., 1.016, 1.0414,
-    1.05, 1.0668, 1.0922, 1.1, 1.15, 1.1811, 1.1906, 1.2, 1.25, 1.3, 1.3208, 1.35, 1.397, 1.4, 1.45, 1.5, 1.5113, 1.55, 1.5875, 1.6,
-    1.6129, 1.65, 1.7, 1.7018, 1.75, 1.778, 1.8, 1.85, 1.8542, 1.9, 1.9304, 1.95, 1.96, 1.97, 1.9844, 1.9939, 2., 2.01, 2.02, 2.03, 2.04,
-    2.05, 2.0574, 2.07, 2.0828, 2.09, 2.1, 2.11, 2.12, 2.13, 2.14, 2.15, 2.16, 2.17, 2.1844, 2.19, 2.2, 2.21, 2.22, 2.23, 2.24, 2.25,
-    2.26, 2.2606, 2.27, 2.28, 2.29, 2.3, 2.31, 2.32, 2.33, 2.34, 2.35, 2.3749, 2.3813, 2.4, 2.4384, 2.45, 2.4892, 2.5, 2.5273, 2.5781,
-    2.6, 2.6416, 2.7, 2.7051, 2.75, 2.7781, 2.794, 2.8, 2.8194, 2.8702, 2.9, 2.9464, 3., 3.048, 3.1, 3.175, 3.2, 3.25, 3.2639, 3.3, 3.4,
-    3.4544, 3.5, 3.5687, 3.5719, 3.6, 3.6576, 3.7, 3.7338, 3.75, 3.7973, 3.8, 3.8608, 3.9, 3.9116, 3.9688, 3.9878, 4., 4.0386, 4.0894,
-    4.1, 4.2, 4.2164, 4.25, 4.3053, 4.3656, 4.3942, 4.4, 4.4958, 4.5, 4.572, 4.6, 4.6228, 4.699, 4.7, 4.75, 4.7625, 4.8, 4.8006, 4.8514,
-    4.9, 4.9149, 4.9784, 5., 5.0546, 5.1, 5.1054, 5.1594, 5.1816, 5.2, 5.2197, 5.25, 5.3, 5.3086, 5.4, 5.4102, 5.5, 5.5563, 5.6, 5.6134,
-    5.7, 5.75, 5.7912, 5.8, 5.9, 5.9436, 5.9531, 6., 6.0452, 6.1, 6.1468, 6.2, 6.2484, 6.25, 6.3, 6.35, 6.4, 6.5, 6.5278, 6.6, 6.6294, 6.7,
-    6.7469, 6.75, 6.7564, 6.8, 6.9, 6.9088, 7., 7.0358, 7.1, 7.1374, 7.1438, 7.2, 7.25, 7.3, 7.366, 7.4, 7.493, 7.5, 7.5406, 7.6, 7.6708,
-    7.7, 7.75, 7.8, 7.9, 7.9375, 8., 8.0264, 8.1, 8.2, 8.2042, 8.25, 8.3, 8.3344, 8.4, 8.4328, 8.5, 8.6, 8.6106, 8.7, 8.7313, 8.75, 8.8,
-    8.8392, 8.9, 9., 9.0932, 9.1, 9.1281, 9.2, 9.25, 9.3, 9.3472, 9.4, 9.5, 9.525, 9.5758, 9.6, 9.7, 9.75, 9.8, 9.8044, 9.9, 9.9219, 10.,
-    10.0838, 10.2616, 10.3188, 10.4902, 10.5, 10.7, 10.7156, 10.9, 11., 11.1125, 11.5, 11.5094, 11.9063, 12., 12.2, 12.3031, 12.5, 12.7,
-    12.8, 13., 13.0969, 13.4938, 13.5, 13.8906, 14., 14.2, 14.2875, 14.5, 14.6844, 14.7, 15., 15.0813, 15.4781, 15.5, 15.875, 16., 16.2719,
-    16.5, 16.6688, 16.8, 17., 17.0656, 17.4625, 17.5, 17.8594, 18., 18.2563, 18.5, 18.6531, 19., 19.05, 19.4469, 19.5, 19.8438, 20., 20.2406,
-    20.5, 20.6375, 21., 21.0344, 21.4313, 21.5, 21.8281, 22., 22.225, 22.5, 22.6219, 23., 23.0188, 23.4156, 23.5, 23.8125, 24., 24.2094,
-    24.5, 24.6063, 25., 25.0031, 25.4, 25.5, 25.7969, 26., 26.1938, 26.5, 26.5906, 26.9875, 27., 27.5, 28., 28.1781, 28.5, 28.575, 29.,
-    29.3688, 29.5, 29.7656, 30., 30.1625, 30.5, 30.5594, 30.9563, 31., 31.3531, 31.5, 32., 32.5, 32.5438, 32.9406, 33., 33.3375, 33.5,
-    33.7344, 34., 34.1313, 34.5, 34.5281, 35., 35.5, 35.7188, 36., 36.1156, 36.5, 44., 50., 62.
+    0.0483, 0.05, 0.0584, 0.0686, 0.0787, 0.0889, 0.0991, 0.1, 0.1092, 0.1194, 0.1295, 0.1397, 0.1499, 0.16, 0.1702, 0.1803, 0.1905, 0.2007, 0.2, 0.2108,
+    0.221, 0.2311, 0.2413, 0.25, 0.254, 0.2667, 0.2794, 0.2921, 0.3, 0.3048, 0.3175, 0.3302, 0.3429, 0.35, 0.368, 0.3969, 0.4, 0.4064, 0.42, 0.44, 0.45,
+    0.4572, 0.46, 0.48, 0.5, 0.508, 0.5334, 0.55, 0.5715, 0.6, 0.6096, 0.635, 0.65, 0.6604, 0.7, 0.7112, 0.7417, 0.75, 0.7874, 0.7938, 0.8, 0.8128, 0.8382,
+    0.85, 0.889, 0.9, 0.9144, 0.9398, 0.95, 0.9652, 0.9906, 1., 1.016, 1.0414, 1.05, 1.0668, 1.0922, 1.1, 1.15, 1.1811, 1.1906, 1.2, 1.25, 1.3, 1.3208, 1.35,
+    1.397, 1.4, 1.45, 1.5, 1.5113, 1.55, 1.5875, 1.6, 1.6129, 1.65, 1.7, 1.7018, 1.75, 1.778, 1.8, 1.85, 1.8542, 1.9, 1.9304, 1.95, 1.96, 1.97, 1.9844, 1.9939,
+    2., 2.01, 2.02, 2.03, 2.04, 2.05, 2.0574, 2.07, 2.0828, 2.09, 2.1, 2.11, 2.12, 2.13, 2.14, 2.15, 2.16, 2.17, 2.1844, 2.19, 2.2, 2.21, 2.22, 2.23, 2.24, 2.25,
+    2.26, 2.2606, 2.27, 2.28, 2.29, 2.3, 2.31, 2.32, 2.33, 2.34, 2.35, 2.3749, 2.3813, 2.4, 2.4384, 2.45, 2.4892, 2.5, 2.5273, 2.5781, 2.6, 2.6416, 2.7, 2.7051,
+    2.75, 2.7781, 2.794, 2.8, 2.8194, 2.8702, 2.9, 2.9464, 3., 3.048, 3.1, 3.175, 3.2, 3.25, 3.2639, 3.3, 3.4, 3.4544, 3.5, 3.5687, 3.5719, 3.6, 3.6576, 3.7,
+    3.7338, 3.75, 3.7973, 3.8, 3.8608, 3.9, 3.9116, 3.9688, 3.9878, 4., 4.0386, 4.0894, 4.1, 4.2, 4.2164, 4.25, 4.3053, 4.3656, 4.3942, 4.4, 4.4958, 4.5,
+    4.572, 4.6, 4.6228, 4.699, 4.7, 4.75, 4.7625, 4.8, 4.8006, 4.8514, 4.9, 4.9149, 4.9784, 5., 5.0546, 5.1, 5.1054, 5.1594, 5.1816, 5.2, 5.2197, 5.25, 5.3,
+    5.3086, 5.4, 5.4102, 5.5, 5.5563, 5.6, 5.6134, 5.7, 5.75, 5.7912, 5.8, 5.9, 5.9436, 5.9531, 6., 6.0452, 6.1, 6.1468, 6.2, 6.2484, 6.25, 6.3, 6.35, 6.4, 6.5,
+    6.5278, 6.6, 6.6294, 6.7, 6.7469, 6.75, 6.7564, 6.8, 6.9, 6.9088, 7., 7.0358, 7.1, 7.1374, 7.1438, 7.2, 7.25, 7.3, 7.366, 7.4, 7.493, 7.5, 7.5406, 7.6, 7.6708,
+    7.7, 7.75, 7.8, 7.9, 7.9375, 8., 8.0264, 8.1, 8.2, 8.2042, 8.25, 8.3, 8.3344, 8.4, 8.4328, 8.5, 8.6, 8.6106, 8.7, 8.7313, 8.75, 8.8, 8.8392, 8.9, 9., 9.0932, 9.1,
+    9.1281, 9.2, 9.25, 9.3, 9.3472, 9.4, 9.5, 9.525, 9.5758, 9.6, 9.7, 9.75, 9.8, 9.8044, 9.9, 9.9219, 10., 10.0838, 10.2616, 10.3188, 10.4902, 10.5, 10.7,
+    10.7156, 10.9, 11., 11.1125, 11.5, 11.5094, 11.9063, 12., 12.2, 12.3031, 12.5, 12.7, 12.8, 13., 13.0969, 13.4938, 13.5, 13.8906, 14., 14.2, 14.2875, 14.5,
+    14.6844, 14.7, 15., 15.0813, 15.4781, 15.5, 15.875, 16., 16.2719, 16.5, 16.6688, 16.8, 17., 17.0656, 17.4625, 17.5, 17.8594, 18., 18.2563, 18.5, 18.6531,
+    19., 19.05, 19.4469, 19.5, 19.8438, 20., 20.2406, 20.5, 20.6375, 21., 21.0344, 21.4313, 21.5, 21.8281, 22., 22.225, 22.5, 22.6219, 23., 23.0188, 23.4156,
+    23.5, 23.8125, 24., 24.2094, 24.5, 24.6063, 25., 25.0031, 25.4, 25.5, 25.7969, 26., 26.1938, 26.5, 26.5906, 26.9875, 27., 27.5, 28., 28.1781, 28.5, 28.575,
+    29., 29.3688, 29.5, 29.7656, 30., 30.1625, 30.5, 30.5594, 30.9563, 31., 31.3531, 31.5, 32., 32.5, 32.5438, 32.9406, 33., 33.3375, 33.5, 33.7344, 34.,
+    34.1313, 34.5, 34.5281, 35., 35.5, 35.7188, 36., 36.1156, 36.5, 44., 50., 62.
     ]
 
 # flanges
@@ -295,58 +292,45 @@ NGPORTS = {
 # next: available sizes from 1.0 to 3.5
 ORINGS = {
     '1.00' : ([0.7, 1.4],
-              [1., 1.5, 2., 2.5, 3., 3.5, 4., 4.5, 5., 5.5, 6., 6.5, 7., 7.5, 8., 8.5, 9., 9.5, 10., 10.5, 11., 11.5, 12., 12.5,
-               13., 13.5, 14., 14.5, 15., 15.5, 16., 16.5, 17., 17.5, 18., 18.5, 19., 19.5, 20., 20.5, 21., 21.5, 22., 22.5, 23.,
-               23.5, 24., 24.5, 25., 26., 27., 28., 29., 30., 31., 32., 33., 34., 35., 36., 37., 38., 39., 40.]),
+              [1., 1.5, 2., 2.5, 3., 3.5, 4., 4.5, 5., 5.5, 6., 6.5, 7., 7.5, 8., 8.5, 9., 9.5, 10., 10.5, 11., 11.5, 12., 12.5, 13., 13.5, 14., 14.5, 15., 15.5, 16., 16.5, 17.,
+               17.5, 18., 18.5, 19., 19.5, 20., 20.5, 21., 21.5, 22., 22.5, 23., 23.5, 24., 24.5, 25., 26., 27., 28., 29., 30., 31., 32., 33., 34., 35., 36., 37., 38., 39., 40.]),
     '1.50' : ([1.14, 2.4],
-              [1.5, 1.85, 2., 2.5, 3., 3.5, 4., 4.5, 5., 5.5, 6., 6.5, 7., 7.5, 8., 8.5, 9., 9.5, 10., 10.5, 10.7, 11., 11.5, 12.,
-               12.5, 13., 13.5, 14., 14.5, 15., 15.5, 16., 17., 17.5, 18., 19., 19.5, 20., 21., 21.5, 22., 23., 24., 25., 26.,
-               27., 28., 28.5, 29., 30., 31.5, 32., 33., 34., 35., 36., 37., 38., 39., 40., 41., 42., 43., 44., 45., 46., 47.,
-               48., 49., 50., 51., 52., 53., 54., 55., 56., 57., 58., 59., 60., 61., 62., 63., 64., 65., 66., 67., 68., 69., 70.,
-               71., 72., 73., 74., 75., 76., 77., 78., 79., 80., 81., 82., 83., 84., 85., 86., 87., 88., 89., 90., 91., 92., 93.,
-               94., 95., 96., 97., 98., 99., 100.]),
+              [1.5, 1.85, 2., 2.5, 3., 3.5, 4., 4.5, 5., 5.5, 6., 6.5, 7., 7.5, 8., 8.5, 9., 9.5, 10., 10.5, 10.7, 11., 11.5, 12., 12.5, 13., 13.5, 14., 14.5, 15., 15.5, 16., 17.,
+               17.5, 18., 19., 19.5, 20., 21., 21.5, 22., 23., 24., 25., 26., 27., 28., 28.5, 29., 30., 31.5, 32., 33., 34., 35., 36., 37., 38., 39., 40., 41., 42., 43., 44., 45.,
+               46., 47., 48., 49., 50., 51., 52., 53., 54., 55., 56., 57., 58., 59., 60., 61., 62., 63., 64., 65., 66., 67., 68., 69., 70., 71., 72., 73., 74., 75., 76., 77., 78.,
+               79., 80., 81., 82., 83., 84., 85., 86., 87., 88., 89., 90., 91., 92., 93., 94., 95., 96., 97., 98., 99., 100.]),
     '2.00' : ([1.68, 2.8],
-              [2., 3., 3.5, 4., 4.5, 5., 6., 6.5, 7., 8., 9., 9.5, 10., 11., 11.5, 12., 12.5, 13., 14., 15., 16., 17., 18., 19.,
-               19.5, 20., 21., 22., 23., 23.5, 24., 24.5, 25., 26., 27., 28., 29., 29.5, 30., 31., 32., 33., 33.5, 34., 35., 36.,
-               36.5, 37., 37.5, 38., 38.5, 39., 40., 41., 42., 43., 44., 45., 46., 47., 48., 49., 50., 51., 52., 53., 54., 55.,
-               55.5, 56., 57., 58., 59., 60., 61., 62., 63., 64., 64.5, 65., 66., 67., 68., 69., 69.5, 70., 71., 72., 73., 74.,
-               75., 76., 77., 78., 79., 80., 81., 82., 83., 84., 85., 86., 87., 88., 89., 90., 91., 92., 93., 94., 95., 96., 97.,
-               98., 99., 100., 102., 105., 109.]),
+              [2., 3., 3.5, 4., 4.5, 5., 6., 6.5, 7., 8., 9., 9.5, 10., 11., 11.5, 12., 12.5, 13., 14., 15., 16., 17., 18., 19., 19.5, 20., 21., 22., 23., 23.5, 24., 24.5, 25., 26.,
+               27., 28., 29., 29.5, 30., 31., 32., 33., 33.5, 34., 35., 36., 36.5, 37., 37.5, 38., 38.5, 39., 40., 41., 42., 43., 44., 45., 46., 47., 48., 49., 50., 51., 52., 53.,
+               54., 55., 55.5, 56., 57., 58., 59., 60., 61., 62., 63., 64., 64.5, 65., 66., 67., 68., 69., 69.5, 70., 71., 72., 73., 74., 75., 76., 77., 78., 79., 80., 81., 82.,
+               83., 84., 85., 86., 87., 88., 89., 90., 91., 92., 93., 94., 95., 96., 97., 98., 99., 100., 102., 105., 109.]),
     '2.50' : ([2.28, 3.5],
-              [3., 4., 5., 6., 7., 8., 9., 10., 11., 12., 13., 14., 15., 16., 17., 18., 19., 20., 21., 22., 23., 24., 25., 26.,
-               27., 28., 29., 30., 31., 32., 33., 34., 35., 36., 37., 38., 39., 40., 41., 42., 43., 44., 45., 46., 47., 48., 49.,
-               50., 51., 52., 53., 54., 55., 56., 57., 58., 59., 60., 61., 62., 63., 64., 65., 66., 67., 68., 69., 70., 71., 72.,
-               73., 74., 75., 76., 77., 78., 79., 80., 81., 82., 83., 84., 85., 86., 87., 88., 89., 90., 91., 92., 93., 94., 95.,
-               96., 97., 98., 99., 100., 101., 102., 103., 104., 105., 106., 107., 108., 109., 110., 111., 112., 113., 114., 115.,
-               116., 117., 118., 119., 120., 121., 122., 123., 124., 125., 126., 127., 128., 129., 130., 131., 132., 133., 134.,
-               135., 136., 137., 138., 139., 140., 141., 142., 143., 144., 145., 146., 147., 148., 149., 150., 162.]),
+              [3., 4., 5., 6., 7., 8., 9., 10., 11., 12., 13., 14., 15., 16., 17., 18., 19., 20., 21., 22., 23., 24., 25., 26., 27., 28., 29., 30., 31., 32., 33., 34., 35., 36., 37.,
+               38., 39., 40., 41., 42., 43., 44., 45., 46., 47., 48., 49., 50., 51., 52., 53., 54., 55., 56., 57., 58., 59., 60., 61., 62., 63., 64., 65., 66., 67., 68., 69., 70.,
+               71., 72., 73., 74., 75., 76., 77., 78., 79., 80., 81., 82., 83., 84., 85., 86., 87., 88., 89., 90., 91., 92., 93., 94., 95., 96., 97., 98., 99., 100., 101., 102.,
+               103., 104., 105., 106., 107., 108., 109., 110., 111., 112., 113., 114., 115., 116., 117., 118., 119., 120., 121., 122., 123., 124., 125., 126., 127., 128.,
+               129., 130., 131., 132., 133., 134., 135., 136., 137., 138., 139., 140., 141., 142., 143., 144., 145., 146., 147., 148., 149., 150., 162.]),
     '3.00' : ([2.45, 3.8],
-              [3., 4., 5., 6., 7., 8., 9., 9.5, 10., 11., 12., 13., 13.5, 14., 15., 15.5, 16., 17., 17.5, 18., 19., 20., 21., 22.,
-               23., 24., 25., 26., 27., 28., 28.5, 29., 29.5, 30., 31., 32., 33., 34., 35., 36., 36.5, 37., 37.5, 38., 39., 40.,
-               41., 42., 42.5, 43., 44., 45., 46., 47., 48., 49., 50., 51., 52., 53., 54., 55., 56., 57., 58., 59., 60., 61., 62.,
-               63., 64., 65., 66., 67., 68., 69., 70., 71., 72., 73., 74., 75., 76., 77., 78., 79., 80., 81., 82., 83., 84., 85.,
-               86., 87., 88., 89., 90., 91., 92., 93., 94., 94.5, 95., 96., 97., 98., 98.5, 99., 100., 101., 102., 103., 104., 105.,
-               106., 107., 108., 109., 110., 111., 112., 113., 114., 115., 116., 117., 118., 119., 120., 121., 122., 123., 124., 125.,
-               126., 127., 128., 129., 130., 131., 132., 133., 134., 135., 136., 137., 138., 139., 140., 141., 142., 143., 144., 145.,
-               146., 147., 148., 149., 150., 151., 152., 153., 154., 155., 156., 157., 158., 159., 160., 161., 162., 163., 164., 165.,
-               166., 167., 168., 169., 170., 171., 172., 173., 174., 175., 176., 177., 178., 179., 180., 181., 182., 183., 184., 185.,
-               186., 187., 188., 189., 190., 191., 192., 193., 194., 195., 196., 197., 198., 199., 200., 201., 202., 203., 204., 205.,
-               206., 207., 208., 209., 210., 211., 212., 213., 214., 215., 216., 217., 218., 219., 220., 221., 222., 223., 224., 225.,
-               226., 227., 228., 229., 230., 231., 232., 233., 234., 235., 236., 237., 238., 239., 240., 241., 242., 243., 244., 245.,
-               246., 247., 248., 249., 250., 260., 270., 280., 285., 290., 310.]),
+              [3., 4., 5., 6., 7., 8., 9., 9.5, 10., 11., 12., 13., 13.5, 14., 15., 15.5, 16., 17., 17.5, 18., 19., 20., 21., 22., 23., 24., 25., 26., 27., 28., 28.5, 29., 29.5, 30.,
+               31., 32., 33., 34., 35., 36., 36.5, 37., 37.5, 38., 39., 40., 41., 42., 42.5, 43., 44., 45., 46., 47., 48., 49., 50., 51., 52., 53., 54., 55., 56., 57., 58., 59.,
+               60., 61., 62., 63., 64., 65., 66., 67., 68., 69., 70., 71., 72., 73., 74., 75., 76., 77., 78., 79., 80., 81., 82., 83., 84., 85., 86., 87., 88., 89., 90., 91., 92.,
+               93., 94., 94.5, 95., 96., 97., 98., 98.5, 99., 100., 101., 102., 103., 104., 105., 106., 107., 108., 109., 110., 111., 112., 113., 114., 115., 116., 117.,
+               118., 119., 120., 121., 122., 123., 124., 125., 126., 127., 128., 129., 130., 131., 132., 133., 134., 135., 136., 137., 138., 139., 140., 141., 142., 143.,
+               144., 145., 146., 147., 148., 149., 150., 151., 152., 153., 154., 155., 156., 157., 158., 159., 160., 161., 162., 163., 164., 165., 166., 167., 168., 169.,
+               170., 171., 172., 173., 174., 175., 176., 177., 178., 179., 180., 181., 182., 183., 184., 185., 186., 187., 188., 189., 190., 191., 192., 193., 194., 195.,
+               196., 197., 198., 199., 200., 201., 202., 203., 204., 205., 206., 207., 208., 209., 210., 211., 212., 213., 214., 215., 216., 217., 218., 219., 220., 221.,
+               222., 223., 224., 225., 226., 227., 228., 229., 230., 231., 232., 233., 234., 235., 236., 237., 238., 239., 240., 241., 242., 243., 244., 245., 246., 247.,
+               248., 249., 250., 260., 270., 280., 285., 290., 310.]),
     '3.50' : ([2.65, 4.6],
-              [8., 9., 10., 11., 12., 13., 14., 15., 16., 17., 18., 19., 20., 21., 22., 23., 24., 25., 26., 27., 28., 29., 30., 31.,
-               32., 33., 34., 35., 36., 37., 38., 39., 40., 41., 42., 43., 44., 45., 46., 47., 48., 49., 50., 51., 52., 53., 54., 55.,
-               56., 57., 58., 59., 60., 61., 62., 63., 64., 65., 66., 67., 68., 69., 70., 71., 72., 73., 74., 75., 76., 77., 78., 79.,
-               80., 81., 82., 83., 84., 85., 86., 87., 88., 89., 90., 91., 92., 93., 94., 95., 96., 97., 98., 99., 100., 101., 102., 103.,
-               104., 105., 106., 107., 108., 109., 110., 111., 112., 113., 114., 115., 116., 117., 118., 119., 120., 121., 122., 123.,
-               124., 125., 126., 127., 128., 129., 130., 131., 132., 133., 134., 135., 136., 137., 138., 139., 140., 141., 142., 143.,
-               144., 145., 146., 147., 148., 149., 150., 151., 152., 153., 154., 155., 156., 157., 158., 159., 160., 161., 162., 163.,
-               164., 165., 166., 167., 168., 169., 170., 171., 172., 173., 174., 175., 176., 177., 178., 179., 180., 181., 182., 183.,
-               184., 185., 186., 187., 188., 189., 190., 191., 192., 193., 194., 195., 196., 197., 198., 199., 200., 201., 202., 203.,
-               204., 205., 206., 207., 208., 209., 210., 215., 220., 225., 230., 235., 240., 245., 250., 255., 260., 265., 270., 275.,
-               280., 285., 290., 295., 300., 305., 310., 315., 320., 325., 330., 335., 340., 345., 350., 351., 355., 360., 365., 370.,
-               380., 390., 400., 410., 420., 430., 440.]),
+              [8., 9., 10., 11., 12., 13., 14., 15., 16., 17., 18., 19., 20., 21., 22., 23., 24., 25., 26., 27., 28., 29., 30., 31., 32., 33., 34., 35., 36., 37., 38., 39., 40., 41.,
+               42., 43., 44., 45., 46., 47., 48., 49., 50., 51., 52., 53., 54., 55., 56., 57., 58., 59., 60., 61., 62., 63., 64., 65., 66., 67., 68., 69., 70., 71., 72., 73., 74.,
+               75., 76., 77., 78., 79., 80., 81., 82., 83., 84., 85., 86., 87., 88., 89., 90., 91., 92., 93., 94., 95., 96., 97., 98., 99., 100., 101., 102., 103., 104., 105.,
+               106., 107., 108., 109., 110., 111., 112., 113., 114., 115., 116., 117., 118., 119., 120., 121., 122., 123., 124., 125., 126., 127., 128., 129., 130., 131.,
+               132., 133., 134., 135., 136., 137., 138., 139., 140., 141., 142., 143., 144., 145., 146., 147., 148., 149., 150., 151., 152., 153., 154., 155., 156., 157.,
+               158., 159., 160., 161., 162., 163., 164., 165., 166., 167., 168., 169., 170., 171., 172., 173., 174., 175., 176., 177., 178., 179., 180., 181., 182., 183.,
+               184., 185., 186., 187., 188., 189., 190., 191., 192., 193., 194., 195., 196., 197., 198., 199., 200., 201., 202., 203., 204., 205., 206., 207., 208., 209.,
+               210., 215., 220., 225., 230., 235., 240., 245., 250., 255., 260., 265., 270., 275., 280., 285., 290., 295., 300., 305., 310., 315., 320., 325., 330., 335.,
+               340., 345., 350., 351., 355., 360., 365., 370., 380., 390., 400., 410., 420., 430., 440.]),
     }
 
 # SHCS
@@ -519,7 +503,48 @@ from PySide import QtGui
 # pylint: disable=R0913
 class Manifold(QtGui.QDialog):
     '''
-    Manifold creation
+    the manifold wokbench is designed to generate a manifold from a series of text descriptions in a single file, read below for details
+    write the text file and save to a folder; once freecad is started, select the Manifold workbench; a dialog window to save an empty FCStd file will popup;
+    change directory to the same folder as the text file and save the empty FCStd file with same name as text file
+    if written properly, a FCStd file of the manifold will be generated along with a machining drawing
+    details of the data file:
+    the file is case sensitive, comma separated and text in the second column, onward, have no whitespaces
+    first line has information of the block size; the string 'Block' then x, y, z dimensions of the block, must always be the first line
+    ie. Block,100.,200.,300.,,
+    next lines can start with any of the following in the first column:
+    cavity: see all key values in CAVITIES dict
+    din valve: see all key values in DINVALVES dict
+    din valve port: see all key values in DINPORTS dict
+    Drillbit: the string valve
+    flange: see all key values in FLANGES dict
+    ng valve: see all key values in NGVALVES dict
+    ng valve port: see all key values in NGPORTS dict
+    O-Ring: the string valve
+    shcs;  see all key values in SHCS dict
+    Text: the string valve
+    next next column notes the face on the manifold where the above is placed:
+    Front, Top, Right, Rear, Bottom, Left: the string valve
+    next two columns are the x and y coordinates on the manifold where the above is placed:
+    x and y coorinates are float values, both comma separated and no whitespace.
+    next columns are function specific:
+    for flange, next column is rotation, either 0., 90.,
+    for din valve, and ng valve next column is rotation, either 0., 90., 180., 270.0
+    for din valve port, next column is rotation, either 0., 90., 180., 270.0; and next is the depth for X, Y, Z1 or Z2
+    for ng valve port, next column is rotation, either 0., 90., 180., 270.0; and next is the depth for A, B, P, T, X, Y, L
+    for Drillbit, next column is drill diameter and the next is the depth
+    for O-Ring, next column is thickness and the next is the inside diameter
+    for Text, next column is text string and the next column is rotation, either 0., 90., 180., 270.0
+    ie. C08-2,Front,25.,50.
+    ie. DIN24342 NG16,Front,25.,50.,0.
+    ie. DIN24342 NG16 X,Front,25.,50.,0.,25.
+    ie. Drillbit,Front,25.,50.,10.,75.
+    ie. ISO6162-2 1-1/4,Front,25.,50.,0.
+    ie. NG16,Front,25.,50.,0.0
+    ie. NG16 P,Front,25.,50.,0.,125.
+    ie. O-Ring,Front,25.,50.,1.5,25.0
+    ie. M20,Front,25.,50.
+    ie. Text,Front,25.,50.,INLET,90.
+    the text file is saved as csv, a comma separated value file
     '''
     # disabling line-too-long pylint warning
     # pylint: disable=C0301
@@ -533,61 +558,14 @@ class Manifold(QtGui.QDialog):
     # pylint: disable=R0915
     def __init__(self):
         '''
-        save the new document into a folder with a csv file with the following information:
-        first line has information of block size; the string 'Block' then x, y, z dimensions of the block
-        ie. Block,100.,200.,300.0
-        note, Block, not block; no quotes, then comma and x, y, z float values, note decimal point all comma
-        separated and no whitespaces.
-        next line can have any of the following, but the lines must have the format noted
-        common to all; face, x and y coorinates, face must be one of the following:
-        Front, Top, Right, Rear, Bottom, Left;  x and y coorinates are float values,
-        all comma separated and no whitespace.
-        next lines can be:
-        cavity: see all key values in CAVITIES dict
-        ie. Front,25.,50.,C08-2
-        note the common data; then a value of the key from CAVITIES dict
-        note that the x and y valves should match the x and y valves of a drillbit, for correct design
-        din valve: see all key values in DINVALVES dict
-        ie. Front,25.,50.,DIN24342 NG16,0.0
-        note the common data; then a value of the key from DINVALVES dict and rotation, note the whitespace
-        between the commas, this is allowed; rotation in this case can be 0., 90., 180., 270.0
-        note that the x and y valves should match the x and y valves of a drillbit, for correct design
-        din valve port: see all key values in DINPORTS dict
-        ie. Front,25.,50.,DIN24342 NG16 X,0.,25.0
-        note the common data; then a value of the key from DINPORTS dict, rotation and depth, note the whitespace
-        between the commas, this is allowed; rotation in this case can be 0., 90., 180., 270.0 and depth is a float value
-        note that the x and y valves must match the x and y valves of the din valve, for correct design
-        drillbit: see all values in DRILLBITS list
-        ie. Front,25.,50.,Drillbit,10.,75.0
-        note the common data; the text Drillbit, then a value from DRILLBITS list, and depth
-        flange: see all values in FLANGES dict
-        ie. Front,25.,50.,ISO6162-2 1-1/4,0.0
-        note the common data; then a value of the key from FLANGES dict, and rotation, note the whitespace
-        between the commas, this is allowed; rotation in this case can be 0., 90.0
-        note that the x and y valves should match the x and y valves of a drillbit, for correct design
-        ng valve: see all key values in NGVALVES dict
-        ie. Front,25.,50.,NG16,0.0
-        note the common data; then a value of the key from NGVALVES dict and rotation,
-        rotation in this case can be 0., 90., 180., 270.0
-        ng valve port: see all key values in NGPORTS dict
-        ie. Front,25.,50.,NG16 P,0.,125.0
-        note the common data; then a value of the key from NGPORTS dict, rotation and depth, note the whitespace
-        between the commas, this is allowed; rotation in this case can be 0., 90., 180., 270.0 and depth is a float value
-        note that the x and y valves must match the x and y valves of the ng valve, for correct design
-        oring: see all values in ORINGS dict
-        ie. Front,25.,50.,O-Ring,1.5,25.0
-        note the common data; the text O-Ring, then the key value from ORINGS dict, thickness and inside diameter
-        shcs: see all values in SHCS dict
-        ie. Front,25.,50.,M20
-        note the common data; then the key value from SHCS dict
-
-        any of the above shapes will be subtracted from the block and a drawing will be generated
+        create variables for block, dimensions, path and file name
         '''
         super(Manifold, self).__init__()
         # variables for block and block size
         self.block, self.xdi, self.ydi, self.zdi = None, 0., 0., 0.
         # name of path and file; same as saved folder for block
         self.pathname, self.file = '', ''
+        args = []
         # save the empty document
         import FreeCADGui as Gui
         Gui.SendMsgToActiveView('Save')
@@ -595,111 +573,43 @@ class Manifold(QtGui.QDialog):
         self.pathname = Gui.ActiveDocument.Document.FileName
         # use os to find the file in the folder
         import os
-        # get name of saved file; number of lines/cells in xlsx or csv
+        # get name of saved file and open csv with same name
         nam = os.path.splitext(self.pathname)[0]
-        # either csv or xlsx, if both are present, xlsx will be used
-        if os.path.isfile(nam +'.xlsx'):
-            print('got here 1')
-            # set the flag to xlsx
-            self.file = nam +'.xlsx'
-            print(self.file)
-            # use load_workbook, which will read the xlsx file, manifold details should be on first sheet
-            from openpyxl import load_workbook
-            print('got here 2')
-            xls = load_workbook(filename=self.file, data_only=True, read_only=True)
-            print('got here 3')
-            # only interested in first sheet, which will be: xls.she[0]
-            she = xls['Sheet 1']
-            # 2nd row should have Block details
-            if she.cell(row=2, column=1).value == 'Block':
-                print('got here 4')
-                # she.cell(2, 2..4).value are float values for block variables
-                self.xdi = she.cell(row=2, column=2).value
-                self.ydi = she.cell(row=2, column=3).value
-                self.zdi = she.cell(row=2, column=4).value
-                print(self.xdi, self.ydi, self.zdi)
-                # create the block
-                self.block = Part.makeBox(self.xdi, self.ydi, self.zdi)
-            else:
-                raise ValueError('exception: Block not first line')
-            # need to adjust the range for the row
-            for row in range(3, she.max_row + 1):
-                # xlsx data both string and float, so do not have to cast type
-                fac, xco, yco = she.cell(row=row, column=1), she.cell(row=row, column=2), she.cell(row=row, column=3)
-                fun, ar1, ar2 = she.cell(row=row, column=4), she.cell(row=row, column=5), she.cell(row=row, column=6)
-                if fac not in FACES:
-                    raise ValueError('exception: {0} is not in FACES'.format(fac))
-                elif fun in CAVITIES:
-                    self.addcavity(fac, xco, yco, fun)
-                elif fun in DINVALVES:
-                    self.adddin(fac, xco, yco, fun, ar1)
-                elif fun in DINPORTS:
-                    self.adddinport(fac, xco, yco, fun, ar1, ar2)
-                elif fun == 'Drillbit':
-                    self.adddrill(fac, xco, yco, ar1, ar2)
-                elif fun in FLANGES:
-                    self.addflange(fac, xco, yco, fun, ar1)
-                elif fun in NGVALVES:
-                    self.addngv(fac, xco, yco, fun, ar1)
-                elif fun in NGPORTS:
-                    self.addngvport(fac, xco, yco, fun, ar1, ar2)
-                elif fun == 'O-Ring':
-                    self.addoring(fac, xco, yco, ar1, ar2)
-                elif fun in SHCS:
-                    self.addshcs(fac, xco, yco, fun)
-                elif fun == 'Text':
-                    self.addtext(fac, xco, yco, ar1, ar2)
-                else:
-                    raise ValueError('exception: file incorrectly written')
-        elif os.path.isfile(nam +'.csv'):
+        if os.path.isfile(nam +'.csv'):
             self.file = nam +'.csv'
             # import csv module
             import csv
             with open(self.file, 'r') as fil:
                 rea = csv.reader(fil, delimiter=',', quotechar='|')
-                # get the first row
-                row = rea.next()
-                # check the first row, has to be Block
-                if row[0] == 'Block':
-                    # cast strings to float values for block variables
-                    self.xdi, self.ydi, self.zdi = float(row[1]), float(row[2]), float(row[3])
-                    # create the block
-                    self.block = Part.makeBox(self.xdi, self.ydi, self.zdi)
-                else:
-                    raise ValueError('exception: Block not first line')
-                # continue with the file, row now points to second row
+                # copy data into args list
                 for row in rea:
-                    # csv data only strings, so have to cast float for some values
-                    fac, xco, yco = row[0], float(row[1]), float(row[2])
-                    fun, ar1, ar2 = row[3], row[4], float(row[5])
-                    if fac not in FACES:
-                        raise ValueError('exception: {0} is not in FACES'.format(fac))
-                    elif fun in CAVITIES:
-                        print('addcavity')
-                        self.addcavity(fac, xco, yco, fun)
-                    elif fun in DINVALVES:
-                        self.adddin(fac, xco, yco, fun, ar1)
-                    elif fun in DINPORTS:
-                        self.adddinport(fac, xco, yco, fun, float(ar1), ar2)
-                    elif fun == 'Drillbit':
-                        print('adddrill')
-                        self.adddrill(fac, xco, yco, float(ar1), ar2)
-                    elif fun in FLANGES:
-                        self.addflange(fac, xco, yco, fun, float(ar1))
-                    elif fun in NGVALVES:
-                        print('addngv')
-                        self.addngv(fac, xco, yco, fun, float(ar1))
-                    elif fun in NGPORTS:
-                        print('addngvport')
-                        self.addngvport(fac, xco, yco, fun, float(ar1), ar2)
-                    elif fun == 'O-Ring':
-                        self.addoring(fac, xco, yco, ar1, ar2)
-                    elif fun in SHCS:
-                        self.addshcs(fac, xco, yco, fun)
-                    elif fun == 'Text':
-                        self.addtext(fac, xco, yco, ar1, ar2)
-                    else:
-                        raise ValueError('exception: file incorrectly written')
+                    args.append(row)
+        # call the functions
+        for arg in args:
+            if arg[0] == 'Block':
+                self.addblock(arg)
+            elif arg[0] in CAVITIES:
+                self.addcavity(arg)
+            elif arg[0] in DINVALVES:
+                self.adddin(arg)
+            elif arg[0] in DINPORTS:
+                self.adddinport(arg)
+            elif arg[0] == 'Drillbit':
+                self.adddrill(arg)
+            elif arg[0] in FLANGES:
+                self.addflange(arg)
+            elif arg[0] in NGVALVES:
+                self.addngv(arg)
+            elif arg[0] in NGPORTS:
+                self.addngvport(arg)
+            elif arg[0] == 'O-Ring':
+                self.addoring(arg)
+            elif arg[0] in SHCS:
+                self.addshcs(arg)
+            elif arg[0] == 'Text':
+                self.addtext(arg)
+            else:
+                raise ValueError('exception: file incorrectly written')
         # show the completed block
         Part.show(self.block)
         App.ActiveDocument.ActiveObject.Label = 'Block'
@@ -711,47 +621,59 @@ class Manifold(QtGui.QDialog):
         # generate a drawing for the block
         self.adddrawing()
 
-    def addcavity(self, fac, xco, yco, cav):
+    def addblock(self, arg):
+        '''
+        this function generates a block, the paraters are:
+        arg[0] = string value of Block
+        arg[1] = float value of the x dimension
+        arg[2] = float value of the y dimension
+        arg[3] = float value of the z dimension
+        ie. typical line in file: Block,63.5,31.75,41.14
+        '''
+        # cast strings to float values for block variables
+        self.xdi, self.ydi, self.zdi = float(arg[1]), float(arg[2]), float(arg[3])
+        # create the block
+        self.block = Part.makeBox(self.xdi, self.ydi, self.zdi)
+
+    def addcavity(self, arg):
         '''
         this function generates a cavity and places it on the block, the paraters are:
-        fac = string value of the face that the cavity will be placed on
-        xco = float value of the x coordinate
-        yco = float value of the y coordinate
-        cav = string value of the cavity
-        the cavity [cav] and dict [CAVITIES] will be sent to generatecavity() which will return a solid
-        the solid will then be placed [with moveto()] on the face [fac] at the x [xco] and y [yco] coordinates
+        arg[0] = string value of the cavity
+        arg[1] = string value of the face
+        arg[2] = float value of the x coordinate
+        arg[3] = float value of the y coordinate
+        the cavity and dict [CAVITIES] will be sent to generatecavity() which will return a solid
+        the solid will then be placed [with moveto()] on the face at the x and y coordinates
         the solid will then be cut from the block
-        ie. typical line in file: Front,25.,150.,T-10A
+        ie. typical line in file: T-10A,Front,25.0,150.0
         '''
         # get the shape of the cavity
-        sha = generatecavity(cav, CAVITIES)
-        # position on fac face, at xco and yco coordinates and cut from block
-        sha.Placement = moveto(fac, xco, yco, self.xdi, self.ydi, self.zdi)
-        # cut shape from block
+        sha = generatecavity(arg[0], CAVITIES)
+        # position on face, at x and y coordinates and cut from block
+        sha.Placement = moveto(arg[1], float(arg[2]), float(arg[3]), self.xdi, self.ydi, self.zdi)
         self.block = self.block.cut(sha)
 
-    def adddin(self, fac, xco, yco, din, rot):
+    def adddin(self, arg):
         '''
         this function generates a din valve and places it on the block, the paraters are:
-        fac = string value of the face that the shape will be placed on
-        xco = float value of the x coordinate
-        yco = float value of the y coordinate
-        din = string value of the din valve
-        rot = float value of the din valve layout: 0.0 = Z2, 90.0 = X, 180.0 = Z1, 270.0 = Y
-        the din valve [din] and dict [DINVALVES] will be sent to generatecavity() which will return a solid
-        the mounting holes and locating pin are also generated, the pin is positioned with rot = 0.0
-        all the solids are then fused togther and then be placed [with moveto()] on the face [fac]
-        at the x [xco] and y [yco] coordinates
-        the Shape will also be cut from block
-        ie. typical line in file: Front,100.,100.,DIN24342 NG16,0.0
+        arg[0] = string value of the din valve
+        arg[1] = string value of the face
+        arg[2] = float value of the x coordinate
+        arg[3] = float value of the y coordinate
+        arg[4] = float value of the layout: 0.0 = Z2, 90.0 = X, 180.0 = Z1, 270.0 = Y
+        the din valve and dict [DINVALVES] will be sent to generatecavity() which will return a solid
+        the mounting holes and locating pin are also generated, the pin is positioned with layout
+        the solid will then be placed [with moveto()] on the face at the x and y coordinates
+        the solid will then be cut from the block
+        ie. typical line in file: DIN24342 NG16,Front,80.0,80.0,0.0
         '''
-        rot = float(rot)
-       # check if rot value is one of the correct values
+        rot = float(arg[4])
+        # check if rot value is one of the correct values
         if rot == 0.0 or rot == 90.0 or rot == 180.0 or rot == 270.0:
             # get the shape of the cavity
-            sha = generatecavity(din, DINVALVES)
+            sha = generatecavity(arg[0], DINVALVES)
             # get dinbolt details: xy dim. (half dim.), thread dia, dep, (pin coor., dri, dep)
-            xydi, dri, dep, pxco, pdri, pdep = DINPATTERNS[din]
+            xydi, dri, dep, pxco, pdri, pdep = DINPATTERNS[arg[0]]
             # create the mounting holes
             sha0 = generatedrill(dri, dep)
             sha0.Placement = App.Placement(App.Vector(xydi, 0., xydi), App.Rotation(App.Vector(0., 0., 0.), 0.))
@@ -766,86 +688,81 @@ class Manifold(QtGui.QDialog):
             pin.rotate(App.Vector(0., 0., 0.), App.Vector(0., 1., 0.), rot)
             # fuse everythiing together
             sha = sha.fuse(sha0).fuse(sha1).fuse(sha2).fuse(sha3).fuse(pin)
-            # position on fac face, at xco and yco coordinates
-            sha.Placement = moveto(fac, xco, yco, self.xdi, self.ydi, self.zdi)
-            # cut shape from block
+            # position on face, at x and y coordinates and cut from block
+            sha.Placement = moveto(arg[1], float(arg[2]), float(arg[3]), self.xdi, self.ydi, self.zdi)
             self.block = self.block.cut(sha)
         else:
-            raise ValueError('exception: rot can only be 0., 90., 180., or 270.0')
+            raise ValueError('exception: rot can only be 0.0, 90.0, 180.0, or 270.0')
 
-    def adddinport(self, fac, xco, yco, dpo, rot, dep):
+    def adddinport(self, arg):
         '''
         this function generates a din port and places it on the block, the paraters are:
-        fac = string value of the face that the shape will be placed on
-        xco = float value of the x coordinate of the main din valve
-        yco = float value of the y coordinate of the main din valve
-        dpo = string value of the din port: X, Y, Z1 or Z2 only
-        rot = float value of the din valve layout: 0., 90., 180., 270.0
-        dep = float value of the depth of the port
-
+        arg[0] = string value of the din valve port
+        arg[1] = string value of the face
+        arg[2] = float value of the x coordinate
+        arg[3] = float value of the y coordinate
+        arg[4] = float value of the layout: 0.0 = Z2, 90.0 = X, 180.0 = Z1, 270.0 = Y
+        arg[5] = float value of the depth of the port
         for proper location of the port, will use a reference drill, small 2.0 x 10.0
-        then the port [dpo] drilling is placed correct location on front face, both reference drill and
-        port drilling are fused together and rotated [rot] and lastly placed [with moveto()] on the face [fac]
-        at the x [xco] and y [yco] coordinates
-        the Shape will also be cut from block
-        ie. typical line in file: Front,40.,40.,DIN24342 NG16 X,270.,60.0
+        then the din valve port is placed correct location on front face, both reference drill and port drilling are fused together
+        the solid will then be placed [with moveto()] on the face at the x and y coordinates
+        the solid will then be cut from the block
+        ie. typical line in file: DIN24342 NG16 X,Front,80.0,80.0,0.0,60.0
         '''
-        rot, dep = float(rot), float(dep)
-       # check if rot value is one of the correct values
+        rot, dep = float(arg[4]), float(arg[5])
+        # check if rot value is one of the correct values
         if rot == 0.0 or rot == 90.0 or rot == 180.0 or rot == 270.0:
             # create the port on front face
-            sha = generateport(dpo, DINPORTS, rot, dep)
-            # position on fac face, at xco and yco coordinates
-            sha.Placement = moveto(fac, xco, yco, self.xdi, self.ydi, self.zdi)
-            # cut shape from block
+            sha = generateport(arg[0], DINPORTS, rot, dep)
+            # position on face, at x and y coordinates and cut from block
+            sha.Placement = moveto(arg[1], float(arg[2]), float(arg[3]), self.xdi, self.ydi, self.zdi)
             self.block = self.block.cut(sha)
         else:
-            raise ValueError('exception: rot can only be 0., 90., 180., or 270.0')
+            raise ValueError('exception: rot can only be 0.0, 90.0, 180.0, or 270.0')
 
-    def adddrill(self, fac, xco, yco, dri, dep):
+    def adddrill(self, arg):
         '''
         this function generates a drilling and places it on the block, the paraters are:
-        fac = string value of the face that the shape will be placed on
-        xco = float value of the x coordinate
-        yco = float value of the y coordinate
-        dri = float value of the drill bit diameter, which is in DRILLBITS
-        dep = float value of the depth of the drill bit
-        the drill bit diameter [dri] and depth [dep] will be sent to generatedrill() which will return a solid
-        the solid will then be placed [with moveto()] on the face [fac] at the x [xco] and y [yco] coordinates
+        arg[0] = string value of Drillbit
+        arg[1] = string value of the face
+        arg[2] = float value of the x coordinate
+        arg[3] = float value of the y coordinate
+        arg[4] = float value of the drillbit diameter
+        arg[5] = float value of the drillbit depth
+        the drill bit diameter and depth will be sent to generatedrill() which will return a solid
+        the solid will then be placed [with moveto()] on the face at the x and y coordinates
         the solid will then be cut from the block
-        ie. typical line in file: Front,12.,25.,Drillbit,10.,75.0
+        ie. typical line in file: Drillbit,Front,12.0,25.0,10.0,75.0
         '''
-        dri, dep = float(dri), float(dep)
         # create shape at 0., 0., 0.0
-        sha = generatedrill(dri, dep)
-        # position on fac face, at xco and yco coordinates
-        sha.Placement = moveto(fac, xco, yco, self.xdi, self.ydi, self.zdi)
-        # cut shape from block
+        sha = generatedrill(float(arg[4]), float(arg[5]))
+        # position on face, at x and y coordinates and cut from block
+        sha.Placement = moveto(arg[1], float(arg[2]), float(arg[3]), self.xdi, self.ydi, self.zdi)
         self.block = self.block.cut(sha)
 
-    def addflange(self, fac, xco, yco, fla, rot):
+    def addflange(self, arg):
         '''
         this function generates a flange pattern and places it on the block, the paraters are:
-        fac = string value of the face that the shape will be placed on
-        xco = float value of the x coordinate
-        yco = float value of the y coordinate
-        fla = string value of the flange pattern
-        rot = float value of the flange layout: 0., 90.0
-        for proper location of the mounting holes, will place drilling, according to rotation [rot]
+        arg[0] = string value of the flange pattern
+        arg[1] = string value of the face
+        arg[2] = float value of the x coordinate
+        arg[3] = float value of the y coordinate
+        arg[4] = float value of the layout: 0.0, 90.0, 180.0, 270.0; 0.0 and 180.0 are same;  90.0, and 270.0 are same
+        for proper location of the mounting holes, will place drilling, according to rotation
         then mirror three times into the correct location on front face, then all are fused together
-        and lastly placed [with moveto()] on the face [fac] at the x [xco] and y [yco] coordinates
-        the Shape will also be cut from block
-        ie. typical line in file: Front,25.,150.,ISO6162-1 2,90.0
+        the solid will then be placed [with moveto()] on the face at the x and y coordinates
+        the solid will then be cut from the block
+        ie. typical line in file: ISO6162-1 2,Front,150.0,150.0,90.0
         '''
-        rot = float(rot)
-       # check if rot value is one of the correct values
-        if rot == 0.0 or rot == 90.0:
+        rot = float(arg[4])
+        # check if rot value is one of the correct values
+        if rot == 0.0 or rot == 90.0 or rot == 180.0 or rot == 270.0:
             # get flange details: x dim. (half dim.), y dim. (half dim.), thread dia, dep
-            xdi, ydi, dri, dep = FLANGES[fla]
+            xdi, ydi, dri, dep = FLANGES[arg[0]]
             # create the mounting holes
             sha0 = generatedrill(dri, dep)
             # place flange on front face
-            if rot == 0.0:
+            if rot == 0.0 or rot == 180.0:
                 sha0.Placement = App.Placement(App.Vector(ydi, 0., xdi), App.Rotation(App.Vector(0., 0., 0.), 0.))
             else:
                 sha0.Placement = App.Placement(App.Vector(xdi, 0., ydi), App.Rotation(App.Vector(0., 0., 0.), 0.))
@@ -855,30 +772,30 @@ class Manifold(QtGui.QDialog):
             sha3 = sha2.mirror(App.Vector(1., 0., 0.), App.Vector(0., 0., 1.))
             # fuse everythiing together
             sha = sha0.fuse(sha1).fuse(sha2).fuse(sha3)
-            # position on fac face, at xco and yco coordinates
-            sha.Placement = moveto(fac, xco, yco, self.xdi, self.ydi, self.zdi)
-            # cut shape from block
+            # position on face, at x and y coordinates and cut from block
+            sha.Placement = moveto(arg[1], float(arg[2]), float(arg[3]), self.xdi, self.ydi, self.zdi)
             self.block = self.block.cut(sha)
         else:
-            raise ValueError('exception: rot can only be 0., or 90.0')
+            raise ValueError('exception: rot can only be 0.0, 90.0, 180.0, or 270.0')
 
-    def addngv(self, fac, xco, yco, ngv, rot):
+    def addngv(self, arg):
         '''
         this function generates a ng valve pattern and places it on the block, the paraters are:
-        fac = string value of the face that the shape will be placed on
-        xco = float value of the x coordinate
-        yco = float value of the y coordinate
-        ngv = string value of the ng valve pattern
-        rot = float value of the ng valve layout: 0., 90., 180., 270.0
-
-        the Shape will also be cut from block
-        ie. typical line in file:
+        arg[0] = string value of the ng valve
+        arg[1] = string value of the face
+        arg[2] = float value of the x coordinate
+        arg[3] = float value of the y coordinate
+        arg[4] = float value of the layout:  0.0, 90.0, 180.0, 270.0
+        each threaded port and pin hole is created according to NGVALVES[arg[0]] dict, all will be fused together
+        the solid will then be placed [with moveto()] on the face at the x and y coordinates
+        the solid will then be cut from the block
+        ie. typical line in file: NG6,Front,150.0,150.0,90.0
         '''
-        rot = float(rot)
-       # check if rot value is one of the correct values
+        rot = float(arg[4])
+        # check if rot value is one of the correct values
         if rot == 0.0 or rot == 90.0 or rot == 180.0 or rot == 270.0:
             # get ng valve details; create reference shape
-            det, sha = NGVALVES[ngv], generatedrill(1., 2.)
+            det, sha = NGVALVES[arg[0]], generatedrill(1., 2.)
             # create a list of drillings; position and rotate on front face then fuse into one shape
             # disabling unused-variable pylint warning
             #pylint: disable=W0612
@@ -888,97 +805,104 @@ class Manifold(QtGui.QDialog):
                 sha0.Placement = App.Placement(App.Vector(xdi, 0., ydi), App.Rotation(App.Vector(0., 0., 0.), 0.))
                 sha0.rotate(App.Vector(0., 0., 0.), App.Vector(0., 1., 0.), rot)
                 sha = sha.fuse(sha0)
-           # position on fac face, at xco and yco coordinates
-            sha.Placement = moveto(fac, xco, yco, self.xdi, self.ydi, self.zdi)
-            # cut shape from block
+            # position on face, at x and y coordinates and cut from block
+            sha.Placement = moveto(arg[1], float(arg[2]), float(arg[3]), self.xdi, self.ydi, self.zdi)
             self.block = self.block.cut(sha)
         else:
-            raise ValueError('exception: rot can only be 0., 90., 180., or 270.0')
+            raise ValueError('exception: rot can only be 0.0, 90.0, 180.0, or 270.0')
 
-    def addngvport(self, fac, xco, yco, npo, rot, dep):
+    def addngvport(self, arg):
         '''
         this function generates a ng port and places it on the block, the paraters are:
-        fac = string value of the face that the shape will be placed on
-        xco = float value of the x coordinate of the main ng valve
-        yco = float value of the y coordinate of the main ng valve
-        npo = string value of the ng valve port: A, B, P, T, Ta, X, Y, or L only
-        rot = float value of the din valve layout: 0., 90., 180., 270.0
-        dep = float value of the depth of the port
-        the Shape will also be cut from block
-        ie. typical line in file:
+        arg[0] = string value of the ng port
+        arg[1] = string value of the face
+        arg[2] = float value of the x coordinate
+        arg[3] = float value of the y coordinate
+        arg[4] = float value of the layout:  0.0, 90.0, 180.0, 270.0
+        arg[5] = float value of the depth of the port
+        the port arg[0], in NGPORTS dict will be created
+        the solid will then be placed [with moveto()] on the face at the x and y coordinates
+        the solid will then be cut from the block
+        ie. typical line in file: NG6 P,Front,150.0,150.0,90.0,55.0
         '''
-        rot, dep = float(rot), float(dep)
-       # check if rot value is one of the correct values
+        rot, dep = float(arg[4]), float(arg[5])
+        # check if rot value is one of the correct values
         if rot == 0.0 or rot == 90.0 or rot == 180.0 or rot == 270.0:
-            sha = generateport(npo, NGPORTS, rot, dep)
-            # position on fac face, at xco and yco coordinates
-            sha.Placement = moveto(fac, xco, yco, self.xdi, self.ydi, self.zdi)
-            # cut shape from block
+            sha = generateport(arg[0], NGPORTS, rot, dep)
+            # position on face, at x and y coordinates and cut from block
+            sha.Placement = moveto(arg[1], float(arg[2]), float(arg[3]), self.xdi, self.ydi, self.zdi)
             self.block = self.block.cut(sha)
         else:
-            raise ValueError('exception: rot can only be 0., 90., 180., or 270.0')
+            raise ValueError('exception: rot can only be 0.0, 90.0, 180.0, or 270.0')
 
-    def addoring(self, fac, xco, yco, thi, idi):
+    def addoring(self, arg):
         '''
         this function generates a oring groove and places it on the block, the paraters are:
-        fac = string value of the face that the shape will be placed on
-        xco = float value of the x coordinate
-        yco = float value of the y coordinate
-        thi = string value of the oring thickness, which is in ORINGS
-        idi = float value of the oring inside diameter, which is in ORINGS[thi][1]
+        arg[0] = string value of O-Ring
+        arg[1] = string value of the face
+        arg[2] = float value of the x coordinate
+        arg[3] = float value of the y coordinate
+        arg[4] = string value of the O-Ring's thickness
+        arg[5] = float value of the O-Ring's inside diameter
+        the solid will then be placed [with moveto()] on the face at the x and y coordinates
         the Shape will also be cut from block
-        ie. typical line in file: Front,12.,25.,O-Ring,1.50,150.0
+        ie. typical line in file: O-Ring,Front,100.0,125.0,1.50,150.0
         '''
-        idi = float(idi)
+        idi = float(arg[5])
         # find the oring in the ORING dict
-        if ORINGS[thi][1].count(idi) == 1:
+        if ORINGS[arg[4]][1].count(idi) == 1:
             # get oring details; need radius
-            squ, gro = ORINGS[thi][0]
+            squ, gro = ORINGS[arg[4]][0]
             rad = (idi / 2)
             from FreeCAD import Base
             # create two cylinders; cut larger from smaller to create an oring groove
             sha0 = Part.makeCylinder(rad + gro, squ, Base.Vector(0., 0., 0.), Base.Vector(0., 1., 0.), 360.)
             sha1 = Part.makeCylinder(rad, squ, Base.Vector(0., 0., 0.), Base.Vector(0., 1., 0.), 360.)
             sha = sha0.cut(sha1)
-            # position on fac face, at xco and yco coordinates
-            sha.Placement = moveto(fac, xco, yco, self.xdi, self.ydi, self.zdi)
-            # cut shape from block
+            # position on face, at x and y coordinates and cut from block
+            sha.Placement = moveto(arg[1], float(arg[2]), float(arg[3]), self.xdi, self.ydi, self.zdi)
             self.block = self.block.cut(sha)
         else:
             # exception will occur if drill is not in array
             raise ValueError('exception: oring must be in ORINGS dict')
 
-    def addshcs(self, fac, xco, yco, shc):
+    def addshcs(self, arg):
         '''
         this function generates a shcs pocket and places it on the block, the paraters are:
-        fac = string value of the face that the shape will be placed on
-        xco = float value of the x coordinate
-        yco = float value of the y coordinate
-        shc = string value of the shcs, which is in SHCS
+        arg[0] = string value of the shcs, which is in SHCS
+        arg[1] = string value of the face
+        arg[2] = float value of the x coordinate
+        arg[3] = float value of the y coordinate
         the Shape will also be cut from block
-        ie. typical line in file: Front,25.,150.,M20
+        ie. typical line in file: M20,Front,75.0,150.0
         '''
         # get shcs details; create cylinder shape
-        dia, dep = SHCS[shc][0]
+        dia, dep = SHCS[arg[0]][0]
         from FreeCAD import Base
         sha = Part.makeCylinder(dia / 2., dep, Base.Vector(0., 0., 0.), Base.Vector(0., 1., 0.), 360.)
-        # position on fac face, at xco and yco coordinates
-        sha.Placement = moveto(fac, xco, yco, self.xdi, self.ydi, self.zdi)
-        # cut shape from block
+        # position on face, at x and y coordinates and cut from block
+        sha.Placement = moveto(arg[1], float(arg[2]), float(arg[3]), self.xdi, self.ydi, self.zdi)
         self.block = self.block.cut(sha)
 
-    def addtext(self, fac, xco, yco, tex, rot):
+    def addtext(self, arg):
         '''
         this function will generate a text shape that will be placed on the block, the paraters are:
-        fac = string value of the face that the shape will be placed on
-        xco = float value of the x coordinate
-        yco = float value of the y coordinate
-        tex = the text tht will be engraved
-        rot = float value of the din valve layout: 0., 90., 180., 270.0
-        the Shape will also be cut from block
-        ie. typical line in file: Front,25.,150.,Tank,0.0
+        arg[0] = string value of the Text
+        arg[1] = string value of the face
+        arg[2] = float value of the x coordinate
+        arg[3] = float value of the y coordinate
+        arg[4] = float value of the layout:  0.0, 90.0, 180.0, 270.0
+        arg[5] = the text tht will be engraved
+        limiting font to Vera.ttf and size to 6; tracking is 0
+        ie. typical line in file: Text,Front,25.0,150.0,0.0,Tank
         '''
-        pass
+        import Draft
+        path = 'C:/Program Files/FreeCAD 0.15/bin/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/'
+        font = 'Vera.ttf'
+        sha = Draft.makeShapeString(arg[5], path + font, 6.0, 10)
+        # position on face, at x and y coordinates and cut from block
+##        sha.Placement = moveto(arg[1], float(arg[2]), float(arg[3]), self.xdi, self.ydi, self.zdi)
+##        self.block = self.block.cut(sha)
 
     def adddrawing(self):
         '''
